@@ -1,0 +1,68 @@
+router 0
+=========================================
+en
+conf t
+
+int fa1/0
+ip address 192.168.10.1 255.255.255.0
+no shut
+exit
+
+int fa4/0
+ip address 172.20.2.1 255.255.0.0
+no shut
+exit
+
+int fa5/0
+ip address 172.10.1.1 255.255.0.0
+no shut
+exit
+
+router rip
+network 192.168.10.0
+network 172.20.0.0
+network 172.10.0.0
+exit
+
+router 1
+=========================================
+en
+conf t
+
+int fa1/0
+ip address 192.168.20.1 255.255.255.0
+no shut
+exit
+
+int fa4/0
+ip address 172.30.3.2 255.255.0.0
+no shut
+exit
+
+int fa5/0
+ip address 172.10.1.2 255.255.0.0
+no shut
+exit
+
+router rip
+network 192.168.20.0
+network 172.30.0.0
+network 172.10.0.0
+exit
+
+router 2
+=========================================
+en
+conf t
+
+int fa4/0
+ip address 172.30.3.1 255.255.0.0
+no shut
+exit
+
+int fa5/0
+ip address 172.20.2.2 255.255.0.0
+no shut
+exit
+
+
